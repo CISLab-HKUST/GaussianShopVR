@@ -1,0 +1,32 @@
+[project]
+name = "gaussianshopvr-backend"
+version = "0.1.0"
+description = "gaussianshopvrVR Backend"
+readme = "README.md"
+requires-python = ">=3.10.18"
+dependencies = [
+    "av>=15.1.0",
+    "concave-hull>=0.0.9",
+    "diff-gaussian-rasterization",
+    "fastapi[standard]>=0.116.1",
+    "numpy>=2.2.6",
+    "omegaconf>=2.3.0",
+    "open3d>=0.19.0",
+    "opencv-python>=4.11.0.86",
+    "plyfile>=1.1.2",
+    "pytorch3d",
+    "scipy>=1.15.3",
+    "simple-knn",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+    "viser~=0.2",
+]
+
+[tool.uv.sources]
+pytorch3d = { git = "https://github.com/facebookresearch/pytorch3d.git", rev = "stable" }
+simple-knn = { path = "submodules/simple-knn" }
+diff-gaussian-rasterization = { path = "submodules/diff-gaussian-rasterization" }
+
+[tool.setuptools.packages.find]
+include = ["gaussianshopvr*"]
+exclude = ["submodules*", "tests*", "docs*"]

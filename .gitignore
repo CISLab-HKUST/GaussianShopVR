@@ -1,21 +1,26 @@
-__pycache__
-dataset
-logs
-tmp
-build
-nerf_dataset
-static
-3DModel
-.vscode
-.threestudio_cache
+# Python
+__pycache__/
+*.pyc
+**.egg-info
+.venv/
+
+# IDE
+.vscode/
+
+# Build & Cache
+build/
+.threestudio_cache/
+
+# Logs
+logs/
 **.log
 
-*.pyc
-.vscode
-output
-build
-diff_rasterization/diff_rast.egg-info
-diff_rasterization/dist
-tensorboard_3d
-screenshots
-submodules
+# Data & Assets
+**.ply
+
+# Output & Results
+output/
+tmp/
+tensorboard_3d/
+screenshots/
+inpaint/
