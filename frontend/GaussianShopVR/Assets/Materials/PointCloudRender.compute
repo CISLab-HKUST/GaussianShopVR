@@ -1,0 +1,21 @@
+#pragma kernel CSMain
+
+struct Particle
+{
+    float3 position;
+    float4 color;
+    float size;
+};
+
+RWStructuredBuffer<Particle> particles;
+
+[numthreads(1024, 1, 1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    int index = id.x;
+    Particle p = particles[index];
+
+    p.color = float4(0, 1, 0, 1); 
+
+    particles[index] = p;
+}
